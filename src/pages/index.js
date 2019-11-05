@@ -6,7 +6,10 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Halifax Skyline" />
+    <SEO
+      title="Dartmouth Ferry | dave.js"
+      description="A CSS animation of the Dartmouth Ferry."
+    />
     <Skyline />
   </Layout>
 )
