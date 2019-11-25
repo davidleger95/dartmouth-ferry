@@ -6,10 +6,13 @@ import cabinBackground from "../images/ferry-body.png"
 const Container = styled.div`
   @keyframes set-sail {
     0% {
-      transform: translateX(-40vw);
+      transform: translateX(calc(-50vw - 100%));
+    }
+    90% {
+      transform: translateX(calc(50vw - 230px));
     }
     100% {
-      transform: translateX(40vw);
+      transform: translateX(calc(50vw - 250px));
     }
   }
 
@@ -19,36 +22,37 @@ const Container = styled.div`
   justify-self: center;
   color: white;
   perspective: 30em;
-  font-size: 0.75rem;
-  animation: set-sail 15s ease-in-out infinite alternate;
-  padding-top: 5em;
+  font-size: 0.5rem;
+  animation: set-sail 25s ease-in-out infinite alternate;
+  padding-top: 15em;
 
   display: grid;
   justify-items: center;
 `
 
 const Boat = styled.div`
+  transform-origin: center;
   @keyframes waves {
     0% {
       transform: rotateZ(0);
     }
 
     25% {
-      transform: rotateZ(3deg);
+      transform: rotateZ(2.5deg);
     }
 
     50% {
-      transform: rotateZ(-3deg);
+      transform: rotateZ(-1.5deg);
     }
 
     75% {
-      transform: rotateZ(3deg);
+      transform: rotateZ(1.5deg);
     }
     100% {
       transform: rotateZ(0);
     }
   }
-  animation: waves 10s ease-in-out infinite;
+  animation: waves 8s ease-in-out infinite;
   transform-style: preserve-3d;
 `
 const Cabin = styled.div`
@@ -64,20 +68,20 @@ const Cabin = styled.div`
 const UpperHaul = styled.div`
   width: 25em;
   height: 2em;
-  background: #14028c;
+  background: linear-gradient(30deg, #25139d, #14028c);
   border-bottom: 4px solid #3f5486;
 `
 
 const Haul = styled.div`
   width: 25em;
   height: 3em;
-  background: #14028c;
+  background: linear-gradient(30deg, #25139d, #14028c);
   transform-origin: top;
   transform: rotateX(-30deg);
   box-shadow: -0.5em 1em 1em 0.5em #0002;
 `
 const Reflected = styled.div`
-  transform: rotateX(180deg) scaleY(1) translateY(-100%);
+  transform: rotateX(180deg) translateY(-100%);
   transform-origin: top;
   perspective: 500px;
 
@@ -98,12 +102,11 @@ const Base = styled.div`
   height: 5em;
   width: 10em;
   background-image: linear-gradient(270deg, #dcdfe5 0%, #b7bcc7 100%);
-  /* transform-style: preserve-3d; */
 `
 
 const Pipe = styled.div`
   position: absolute;
-  background-image: linear-gradient(270deg, #dcdfe5 0%, #b7bcc7 100%);
+  background-image: linear-gradient(-90deg, #dcdfe5 20%, #aaa 100%);
   width: 1em;
   height: 12em;
   border-radius: 1em 1em 0 0;
@@ -216,7 +219,7 @@ const HelmContainer = styled.div`
   display: grid;
   position: relative;
   justify-items: center;
-  transform: translateZ(-12em);
+  transform: translateZ(-10em) translateY(1.5em);
   perspective: 500px;
   /* transform-style: preserve-3d; */
 `
