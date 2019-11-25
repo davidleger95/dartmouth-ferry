@@ -6,7 +6,7 @@ import cabinBackground from "../images/ferry-body.png"
 const Container = styled.div`
   @keyframes set-sail {
     0% {
-      transform: translateX(calc(-50vw - 100%));
+      transform: translateX(calc(-50vw - 60%));
     }
     90% {
       transform: translateX(calc(50vw - 230px));
